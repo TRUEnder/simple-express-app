@@ -8,7 +8,7 @@ const app = express()
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/api/', (req, res) => {
+app.get('/', (req, res) => {
     const message = {
         data: {
             message: "Success"
