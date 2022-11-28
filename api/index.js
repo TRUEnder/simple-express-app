@@ -8,11 +8,13 @@ const app = express()
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.set('view engine', 'ejs')
-app.set('views', 'views')
-
-app.get('/', (req, res) => {
-    res.render('index.ejs')
+app.get('/api/', (req, res) => {
+    const message = {
+        data: {
+            message: "Success"
+        }
+    }
+    res.status(200).json(message)
 })
 
 app.listen(process.env.PORT || 3000, () => {
